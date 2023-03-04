@@ -1,0 +1,31 @@
+<p-headline variant="headline-4">My Webcomponents</p-headline>
+
+<p-tabs-bar [activeTabIndex]="tabIndex" (tabChange)="onTabChange($event)">
+  <ng-container *ngFor="let tabPanel of tabPanels; let i = index">
+    <button type="button" [attr.id]="'tab-item-' + i" [attr.aria-controls]="'tab-panel-' + i">
+      {{ tabPanel }}
+    </button>
+  </ng-container>
+</p-tabs-bar>
+
+<ng-container>
+  <div
+    [attr.id]="'tab-panel-0'"
+    [hidden]="tabIndex !== 0"
+    [tabindex]="tabIndex === 0"
+    role="tabpanel"
+    [attr.aria-labelledby]="'tab-item-0'"
+  >
+    <my-component-a *axLazyElement="elementAUrl"></my-component-a>
+  </div>
+  <div
+    [attr.id]="'tab-panel-1'"
+    [hidden]="tabIndex !== 1"
+    [tabindex]="tabIndex === 1"
+    role="tabpanel"
+    [attr.aria-labelledby]="'tab-item-1'"
+  >
+    <my-component-b *axLazyElement="elementBUrl"></my-component-b>
+  </div>
+</ng-container>
+
