@@ -15,6 +15,7 @@
     "postinstall": "ngcc",
     "build:a:stats": "ng build --project webcomponent-a --stats-json",
     "analyze:a": "webpack-bundle-analyzer dist/webcomponent-a/stats.json",
+    "build:webcomponent-a:default": "ng build --configuration=production --project webcomponent-a",
     "build:webcomponent-a": "ng build --configuration=production --project webcomponent-a --single-bundle",
     "build:webcomponent-b": "ng build --configuration=production --project webcomponent-b --single-bundle",
     "build:host": "ng build --configuration=production --project host --single-bundle"
